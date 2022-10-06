@@ -10,12 +10,11 @@ def save_to_csv(data,headers,file_name):
 def extract_no(text):
     import re
     numbers = re.findall(r'\b\d+\b',text)
-    return int(numbers[-1]) #if isinstance(numbers[-1],str) else numbers[-1] 
-
+    return int(numbers[-1])
 
 def clean_search_post_str(job_to_search):
-       job_position =job_to_search.replace(" ","+") if " " in job_to_search else job_to_search
-       return job_position
+    job_position =job_to_search.replace(" ","+") if " " in job_to_search else job_to_search
+    return job_position
 
 def generate_jobserve_url(region,lang):
     url = f"https://jobserve.com/{region}/{lang}/JobListing.aspx?"
